@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!-- standalone collection of list -->
+	<util:list list-class="java.util.LinkedList" id="myfriends">
+		<value>Aman</value>
+		<value>Rakesh</value>
+		<value>Trilok</value>
+	</util:list>
+
+	<!-- standalone collection of Map -->
+	<util:map map-class="java.util.TreeMap" id="all">
+		<entry key="Spring" value="5000"/>
+		<entry key="hibernate" value="3000"/>
+	</util:map>
+
+<!-- 	standalone properties -->
+	<util:properties id="dbconfig">
+		<prop key="driver">com.mysql.jdbc.Driver</prop>
+		<prop key="username">root</prop>
+	</util:properties>
+	
+	<bean class="com.springcore.standalone.collection.Person" name="person1">
+		<property name="friends" ref="myfriends"/>
+		<property name="frameworks" ref="all"/>
+		<property name="properties" ref="dbconfig"/>
+	</bean>
+</beans>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- this is our bean -->
+	<bean name="Employee1" class="com.springcore.collections.Employee">
+		<property name="empName" value="Radhe" />
+
+		<property name="phones">
+			<list>
+				<value>575775775</value>
+				<value>66646464</value>
+				<value>656565</value>
+				<null></null>
+			</list>
+		</property>
+
+		<property name="addresses">
+			<set>
+				<value>Delhi</value>
+				<value>Lucknow</value>
+				<value>kanpur</value>
+			</set>
+
+		</property>
+
+		<property name="courses">
+		<map>
+			<entry key="java" value="2monts"/>
+			<entry key="Python" value="1.2monts"/>
+			<entry key="c" value="1monts"/>
+		</map>
+
+		</property>
+		
+		<property name="props">
+		<props>
+			<prop key="status">great</prop>
+			<prop key="manner">nice</prop>
+		</props>
+		</property>
+	</bean>
+
+</beans>
